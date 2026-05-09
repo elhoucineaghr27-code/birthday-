@@ -7,28 +7,37 @@
     body{
       margin:0;
       overflow:hidden;
-      background:white;
+      background:linear-gradient(to bottom,#fff,#ffe6f0);
       font-family:Arial;
     }
 
     .item{
       position:absolute;
-      transform:translate(100px,50px);
-      
+
       color:gold;
       font-size:30px;
-      animation:fall 2s linear forwards;
       white-space:nowrap;
+
+      animation:fall 4s linear forwards;
+
+      text-shadow:0 0 10px gold;
+
+      user-select:none;
+      pointer-events:none;
     }
 
     @keyframes fall{
+
       from{
-        top:-30px;
+        top:-50px;
+        opacity:1;
+        transform:rotate(0deg);
       }
 
       to{
         top:100vh;
         opacity:0;
+        transform:rotate(360deg);
       }
     }
 
@@ -36,8 +45,19 @@
       text-align:center;
       color:pink;
       margin-top:20px;
-      font-size:40px;
-      text-shadow:0 0 10px pink;
+      font-size:50px;
+      text-shadow:0 0 20px pink;
+      animation:glow 2s infinite alternate;
+    }
+
+    @keyframes glow{
+      from{
+        transform:scale(1);
+      }
+
+      to{
+        transform:scale(1.05);
+      }
     }
   </style>
 </head>
@@ -67,17 +87,26 @@ function createItem(){
   div.innerText =
   items[Math.floor(Math.random()*items.length)];
 
+  // Position horizontal
   div.style.left =
   Math.random()*window.innerWidth + "px";
+
+  // Size random
+  div.style.fontSize =
+  (20 + Math.random()*30) + "px";
+
+  // Speed random
+  div.style.animationDuration =
+  (2 + Math.random()*3) + "s";
 
   document.body.appendChild(div);
 
   setTimeout(()=>{
     div.remove();
-  },3000);
+  },5000);
 }
 
-setInterval(createItem,200);
+setInterval(createItem,150);
 
 </script>
 
