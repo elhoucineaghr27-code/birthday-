@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Happy Birthday 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body{
       margin:0;
@@ -12,7 +13,7 @@
     .item{
       position:absolute;
       color:gold;
-      font-size:30px;
+      font-size:25px;
       animation:fall 3s linear forwards;
       white-space:nowrap;
     }
@@ -34,11 +35,24 @@
       color:#ff1493;
       margin:0;
       font-size:35px;
-      text-shadow:0 0 20px #ff69b4;
+      text-shadow:0 0 15px #ff69b4;
       z-index:10;
       background:rgba(255,255,255,0.9);
       padding:15px 25px;
-      border-radius:20px;
+      border-radius:15px;
+      text-align:center;
+    }
+    
+    /* Pour les petits écrans (smartphones) */
+    @media (max-width: 600px) {
+      h1{
+        font-size:22px;
+        padding:10px 15px;
+        border-radius:10px;
+      }
+      .item{
+        font-size:20px;
+      }
     }
   </style>
 </head>
@@ -60,8 +74,7 @@ function createItem(){
   div.className = "item";
   div.innerText = items[Math.floor(Math.random()*items.length)];
   
-  // Position aléatoire mais dans les limites de l'écran (avec marge de 10%)
-  const maxLeft = window.innerWidth * 0.9;
+  const maxLeft = window.innerWidth * 0.85;
   div.style.left = (Math.random() * maxLeft) + "px";
   
   document.body.appendChild(div);
