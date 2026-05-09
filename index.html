@@ -42,18 +42,14 @@
       border-radius:15px;
       text-align:center;
       white-space:nowrap;
-      max-width:90%;
     }
     
-    /* Pour les petits écrans */
+    /* Pour mobile - taille plus petite */
     @media (max-width: 600px) {
       h1{
-        font-size:18px;
-        padding:12px 20px;
-        border-radius:12px;
-        white-space:normal;
-        line-height:1.4;
-        max-width:85%;
+        font-size:16px;
+        padding:10px 15px;
+        border-radius:10px;
       }
       .item{
         font-size:18px;
@@ -62,7 +58,7 @@
   </style>
 </head>
 <body>
-<h1>🎂 HAPPY<br>BIRTHDAY 🎂</h1>
+<h1>🎂 HAPPY BIRTHDAY 🎂</h1>
 <script>
 const items = [
 "🎂Happy Birthday!",
@@ -79,7 +75,7 @@ function createItem(){
   div.className = "item";
   div.innerText = items[Math.floor(Math.random()*items.length)];
   
-  const maxLeft = window.innerWidth * 0.80;
+  const maxLeft = window.innerWidth * 0.75;
   div.style.left = (Math.random() * maxLeft) + "px";
   
   document.body.appendChild(div);
