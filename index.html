@@ -7,21 +7,21 @@
     body{
       margin:0;
       overflow:hidden;
-      background:black;
+      background:white;
       font-family:Arial;
     }
 
     .item{
       position:absolute;
-      color:white;
-      font-size:20px;
+      color:pink;
+      font-size:10px;
       animation:fall 5s linear forwards;
       white-space:nowrap;
     }
 
     @keyframes fall{
       from{
-        top:-40px;
+        top:-30px;
       }
 
       to{
@@ -32,10 +32,10 @@
 
     h1{
       text-align:center;
-      color:pink;
+      color:sky blue;
       margin-top:20px;
-      font-size:40px;
-      text-shadow:0 0 20px hotpink;
+      font-size:30px;
+      text-shadow:0 0 10px blue;
     }
   </style>
 </head>
@@ -72,7 +72,7 @@ function createItem(){
 
   setTimeout(()=>{
     div.remove();
-  },4000);
+  },3000);
 }
 
 setInterval(createItem,200);
